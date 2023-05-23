@@ -19,7 +19,7 @@
     "react-is": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "react-switch": "^7.0.0",
-    "styled-components": "^5.3.9"
+    "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

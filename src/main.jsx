@@ -1,7 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
+import App from "./App";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import axios from "axios";
 
 const token = await axios.post(
@@ -17,7 +22,7 @@ const token = await axios.post(
 );
 
 const response = await axios.get(
-  "https://api.petfinder.com/v2/animals?type=dog",
+  "https://api.petfinder.com/v2/animals?type=cat",
   {
     headers: {
       Authorization: `Bearer ${token.data.access_token}`,
@@ -26,9 +31,22 @@ const response = await axios.get(
 );
 console.log(response.data.animals);
 
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path="/" element={<App />} errorElement={<ErrorView />}>
+//       <Route index loader={ListViewData} element={<ListView />} />
+//       <Route
+//         path="/details/:id"
+//         loader={DetailsViewData}
+//         element={<DetailsView />}
+//       />
+//     </Route>
+//   )
+// );
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    {/* <RouterProvider router={router} /> */}
     <App />
-    <p>hej</p>
   </React.StrictMode>
 );

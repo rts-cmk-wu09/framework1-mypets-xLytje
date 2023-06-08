@@ -52,7 +52,7 @@ const Text = styled.select`
   border: none;
   background: transparent;
 `;
-const names = ["Cats", "Dogs", "Birds", "Horses", "Rabbits", "Other"];
+const names = ["Cats", "Dogs", "Birds", "Horses", "Fish", "Rabbits", "Other"];
 const ListView = () => {
   return (
     <>

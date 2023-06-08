@@ -13,6 +13,16 @@ import DetailsView from "./pages/details";
 import ListView from "./pages/list";
 import axios from "axios";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App />} errorElement={<ErrorView />}>
+      <Route index element={<IndexView />} />
+      <Route path="/list" element={<ListView />} />
+      <Route path="/details" element={<DetailsView />} />
+    </Route>
+  )
+);
+
 const token = await axios.post(
   `https://api.petfinder.com/v2/oauth2/token`,
   `grant_type=client_credentials&client_id=${
@@ -34,16 +44,6 @@ export const response = await axios.get(
   }
 );
 console.log(response.data.animals);
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<App />} errorElement={<ErrorView />}>
-      <Route index element={<IndexView />} />
-      <Route path="/list" element={<ListView />} />
-      <Route path="/details" element={<DetailsView />} />
-    </Route>
-  )
-);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

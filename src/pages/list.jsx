@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { FiBell, FiChevronDown } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Tags } from "../components/Tags";
+import { Dogs } from "../components/Dogs";
 
 const Header = styled.header`
   display: flex;
@@ -52,6 +53,12 @@ const Text = styled.select`
   border: none;
   background: transparent;
 `;
+const StyledDiv = styled.div`
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
 const names = ["Cats", "Dogs", "Birds", "Horses", "Fish", "Rabbits", "Other"];
 const ListView = () => {
   return (
@@ -77,8 +84,15 @@ const ListView = () => {
           <Tags name={data} />
         ))}
       </div>
-
-      {/* <Dogs /> */}
+      <StyledDiv>
+        {response.data.animals.map((data) => (
+          <Dogs
+            source={
+              "./src/assets/dog.png" /*response.data.animals.find((data) => data.photos[0])*/
+            }
+          />
+        ))}
+      </StyledDiv>
       <Footer></Footer>
     </>
   );
@@ -98,10 +112,10 @@ const token = await axios.post(
   }
 );
 
-const response = await axios.get("https://api.petfinder.com/v2/types", {
+const response = await axios.get("https://api.petfinder.com/v2/animals?=dog", {
   headers: {
     Authorization: `Bearer ${token.data.access_token}`,
   },
 });
 
-console.log(response);
+console.log(response.data.animals);

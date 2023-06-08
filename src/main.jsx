@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from "react-router-dom";
+import "./App.css";
 import axios from "axios";
 
 const token = await axios.post(
@@ -29,7 +29,7 @@ const response = await axios.get(
     },
   }
 );
-console.log(response.data.animals);
+console.log(response);
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -47,6 +47,5 @@ console.log(response.data.animals);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <RouterProvider router={router} /> */}
-    <App />
   </React.StrictMode>
 );

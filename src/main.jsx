@@ -6,8 +6,9 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import "./App.css";
+import App from "./App";
 import axios from "axios";
+import IndexView from "./pages";
 
 const token = await axios.post(
   `https://api.petfinder.com/v2/oauth2/token`,
@@ -31,18 +32,18 @@ const response = await axios.get(
 );
 console.log(response);
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/" element={<App />} errorElement={<ErrorView />}>
-//       <Route index loader={ListViewData} element={<ListView />} />
-//       <Route
-//         path="/details/:id"
-//         loader={DetailsViewData}
-//         element={<DetailsView />}
-//       />
-//     </Route>
-//   )
-// );
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route index element={<IndexView />} />
+      {/* <Route
+        path="/details/:id"
+        loader={DetailsViewData}
+        element={<DetailsView />}
+      /> */}
+    </Route>
+  )
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -2,9 +2,9 @@
 body {
   background-color: var(--background);
   max-width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
-  overflow: hidden;
   text-align: center;
   font-family: "Lato", sans-serif;
 }
@@ -28,12 +28,14 @@ button:active {
   --primary: #5533ea;
   --accent1: #ffc734;
   --accent2: #ff8893;
+  --button: #57419d;
   --semantic: #261465;
   --title: #333333;
   --bread: #828282;
   --shadowout: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   --shadowin: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
 }
+
 /* ------------------------------------------------------------ */
 
 .frontcat {
@@ -44,6 +46,7 @@ button:active {
   font-weight: 800;
   font-size: 20px;
   color: var(--title);
+  margin-top: 40px;
 }
 
 .frontbread {
@@ -51,4 +54,30 @@ button:active {
   font-size: 16px;
   font-style: normal;
   color: var(--bread);
+  margin-bottom: 40px;
+}
+.frontdot {
+  width: 40px;
+  margin: auto;
+  display: block;
+}
+.frontbutton {
+  position: relative;
+  top: 50px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--button);
+  color: #fff;
+  font-size: 1em;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+    5px 5px 10px rgba(170, 170, 204, 0.25),
+    10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
+  border-radius: 320px;
+}
+.frontbutton:active {
+  color: #fff;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+    5px 5px 10px rgba(170, 170, 204, 0.25),
+    10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
 }

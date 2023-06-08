@@ -10,16 +10,13 @@ import App from "./App";
 import IndexView from "./pages/index";
 import { response } from "./pages";
 import ErrorView from "./pages/error";
+import DetailsView from "./pages/details";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorView />}>
       <Route index loader={response} element={<IndexView />} />
-      {/* <Route
-        path="/details/:id"
-        loader={DetailsViewData}
-        element={<DetailsView />}
-      /> */}
+      <Route path="/details" element={<DetailsView />} />
     </Route>
   )
 );

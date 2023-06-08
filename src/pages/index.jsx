@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const IndexView = () => {
@@ -11,7 +10,7 @@ const IndexView = () => {
         fatigue.
       </h2>
       <img className="frontdot" src="./src/assets/dots.png" alt="" />
-      <Link>
+      <Link to={"/list"}>
         <button className="frontbutton">Skip</button>
       </Link>
     </>

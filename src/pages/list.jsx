@@ -1,20 +1,40 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { styled } from "styled-components";
+
+const Header = styled.header``;
+const Footer = styled.footer``;
 
 const ListView = () => {
   return (
     <>
-      <img className="frontcat" src="./src/assets/cat.png" alt="" />
-      <h1 className="fronttitle">My Pets</h1>
-      <h2 className="frontbread">
-        Taking care of a pet is my favorite, it helps me to gaimr stress and
-        fatigue.
-      </h2>
-      <img className="frontdot" src="./src/assets/dots.png" alt="" />
-      <Link>
-        <button className="frontbutton">Skip</button>
-      </Link>
+      <Header></Header>
+      <Tags />
+      <Dogs />
+      <Footer></Footer>
     </>
   );
 };
 
 export default ListView;
+
+const token = await axios.post(
+  `https://api.petfinder.com/v2/oauth2/token`,
+  `grant_type=client_credentials&client_id=${
+    import.meta.env.VITE_API_KEY
+  }&client_secret=${import.meta.env.VITE_SECRET_KEY}`,
+  {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  }
+);
+
+const response = await axios.get(
+  "https://api.petfinder.com/v2/animals?type=dog",
+  {
+    headers: {
+      Authorization: `Bearer ${token.data.access_token}`,
+    },
+  }
+);
+console.log(response.data.animals);

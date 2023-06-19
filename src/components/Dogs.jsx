@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { FiMapPin } from "react-icons/fi";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const StyledContainter = styled.section`
   width: 100%;
@@ -13,10 +15,61 @@ const StyledContainter = styled.section`
 const Image = styled.img`
   height: 100%;
 `;
+const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px 0 0;
+  font-size: 20px;
+  height: 33px;
+  width: 33px;
+  padding: 6px;
+`;
+const DescSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  gap: 0px;
+`;
+const HeartO = styled(AiOutlineHeart)`
+  color: red;
+`;
+const Pin = styled(FiMapPin)`
+  color: var(--primary);
+`;
+const DescHead = styled.h3`
+  font-size: 18px;
+  margin: 0;
+`;
+const DescSpan = styled.span`
+  font-size: 12px;
+  margin: 8px 0 12px;
+`;
+const DescP = styled.p`
+  font-size: 14px;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+`;
 export const Dogs = (props) => {
   return (
     <StyledContainter>
       <Image src={props.source} alt="" />
+      <DescSection>
+        <DescHead>{props.head}</DescHead>
+        <DescSpan>
+          <Pin /> New York City
+        </DescSpan>
+        <DescP>{props.p}</DescP>
+      </DescSection>
+      <Button>
+        <HeartO />
+      </Button>
     </StyledContainter>
   );
 };

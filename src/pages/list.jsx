@@ -55,10 +55,12 @@ const Text = styled.select`
 `;
 const StyledDiv = styled.div`
   margin-top: 110px;
+  padding-bottom: 120px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 `;
+
 const names = ["Cats", "Dogs", "Birds", "Horses", "Fish", "Rabbits", "Other"];
 const ListView = () => {
   return (
@@ -81,15 +83,15 @@ const ListView = () => {
       </Header>
       <div className="carousel">
         {names.map((data) => (
-          <Tags name={data} />
+          <Tags name={data}></Tags>
         ))}
       </div>
       <StyledDiv>
         {response.data.animals.map((data) => (
           <Dogs
-            source={
-              "./src/assets/dog.png" /*response.data.animals.find((data) => data.photos[0])*/
-            }
+            source={"./src/assets/dog.png"}
+            head={data.breeds.primary}
+            p={data.description}
           />
         ))}
       </StyledDiv>

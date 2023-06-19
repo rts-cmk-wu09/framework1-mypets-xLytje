@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FiMapPin } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const StyledContainter = styled.section`
   width: 100%;
@@ -31,11 +30,7 @@ const Button = styled.button`
   padding: 6px;
 `;
 const DescSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
   text-align: left;
-  gap: 0px;
 `;
 const HeartO = styled(AiOutlineHeart)`
   color: red;

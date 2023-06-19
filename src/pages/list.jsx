@@ -1,6 +1,6 @@
 import axios from "axios";
 import { styled } from "styled-components";
-import { FiBell, FiChevronDown } from "react-icons/fi";
+import { FiBell } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Tags } from "../components/Tags";
 import { Dogs } from "../components/Dogs";
@@ -35,9 +35,6 @@ const Image = styled.img`
 `;
 const Bell = styled(FiBell)`
   color: var(--primary);
-`;
-const Chevron = styled(FiChevronDown)`
-  color: var(--bread);
 `;
 const Pin = styled(FaMapMarkerAlt)`
   color: var(--semantic);

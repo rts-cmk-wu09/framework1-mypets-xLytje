@@ -1,27 +1,32 @@
 import { Link } from "react-router-dom";
+import { token } from "./list";
 import axios from "axios";
+import { useResolvedPath } from "react-router-dom";
+import { styled } from "styled-components";
+
+const Image = styled.img`
+  width: 100vw;
+  background-color: var(--button);
+  margin: -2rem;
+  padding-bottom: 50px;
+`;
 
 const DetailsView = () => {
   return (
     <>
-      <img className="frontcat" src="./src/assets/cat.png" alt="" />
-      <h1 className="fronttitle">My Pets</h1>
-      <h2 className="frontbread">
-        Taking care of a pet is my favorite, it helps me to gaimr stress and
-        fatigue.
-      </h2>
-      <img className="frontdot" src="./src/assets/dots.png" alt="" />
-      <Link>
-        <button className="frontbutton">Skip</button>
-      </Link>
+      <Image src="../src/assets/bg-dog.png" alt="" />
     </>
   );
 };
 
 export default DetailsView;
-
-// const response = await axios.get("https://api.petfinder.com/v2/animals?=dog", {
-//   headers: {
-//     Authorization: `Bearer ${token.data.access_token}`,
-//   },
-// });
+const params = location.pathname.slice(9);
+const dogDetail = await axios.get(
+  `https://api.petfinder.com/v2/animals/${params}`,
+  {
+    headers: {
+      Authorization: `Bearer ${token.data.access_token}`,
+    },
+  }
+);
+console.log(dogDetail);

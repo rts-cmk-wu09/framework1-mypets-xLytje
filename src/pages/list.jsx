@@ -103,7 +103,7 @@ const ListView = () => {
 
 export default ListView;
 
-const token = await axios.post(
+export const token = await axios.post(
   `https://api.petfinder.com/v2/oauth2/token`,
   `grant_type=client_credentials&client_id=${
     import.meta.env.VITE_API_KEY

@@ -98,7 +98,7 @@ const DetailsView = () => {
         </Button>
         <GenderP>{dogDetail.data.animal.gender}</GenderP>
         <Desc>{dogDetail.data.animal.description}</Desc>
-        <WhiteLink to="/">
+        <WhiteLink to="/title">
           <Back>Back</Back>
         </WhiteLink>
       </StyledSection>

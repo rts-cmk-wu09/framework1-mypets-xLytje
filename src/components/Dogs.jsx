@@ -14,7 +14,7 @@ const StyledContainter = styled.section`
   display: flex;
   color: var(--title);
 `;
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   text-decoration: none;
 `;
 const Image = styled.img`
@@ -64,7 +64,7 @@ const DescP = styled.p`
 `;
 export const Dogs = (props) => {
   return (
-    <StyledLink to={`/details/${props.id}`} key={props.id}>
+    <StyledLink href={`/details/${props.id}`} key={props.id}>
       <StyledContainter>
         <Image src={props.source} alt="" />
         <DescSection>

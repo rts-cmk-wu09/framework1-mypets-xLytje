@@ -66,10 +66,15 @@ const Desc = styled.p`
   margin: 0;
 `;
 const Back = styled.button`
-  background-color: var(--button);
-  margin-top: 30px;
-  width: 100%;
-  color: white;
+  & {
+    background-color: var(--button);
+    margin-top: 30px;
+    width: 100%;
+    color: white;
+  }
+  &:hover {
+    box-shadow: none;
+  }
 `;
 const WhiteLink = styled(Link)`
   text-decoration: none;

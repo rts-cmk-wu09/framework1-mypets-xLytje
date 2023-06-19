@@ -2,6 +2,7 @@ import axios from "axios";
 import { styled } from "styled-components";
 import { FiBell } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { BsHouseDoor, BsChat, BsHeart, BsPerson } from "react-icons/bs";
 import { Tags } from "../components/Tags";
 import { Dogs } from "../components/Dogs";
 
@@ -22,6 +23,9 @@ const Footer = styled.footer`
   height: 105px;
   left: 0;
   border-radius: 20px 20px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `;
 const Button = styled.button`
   display: flex;
@@ -56,6 +60,38 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+`;
+const Foot1 = styled(BsHouseDoor)`
+  & {
+    color: var(--bread);
+  }
+  &:hover {
+    color: var(--primary);
+  }
+`;
+const Foot2 = styled(BsChat)`
+  & {
+    color: var(--bread);
+  }
+  &:hover {
+    color: var(--primary);
+  }
+`;
+const Foot3 = styled(BsHeart)`
+  & {
+    color: var(--bread);
+  }
+  &:hover {
+    color: var(--primary);
+  }
+`;
+const Foot4 = styled(BsPerson)`
+  & {
+    color: var(--bread);
+  }
+  &:hover {
+    color: var(--primary);
+  }
 `;
 
 const names = ["Cats", "Dogs", "Birds", "Horses", "Fish", "Rabbits", "Other"];
@@ -93,7 +129,20 @@ const ListView = () => {
           />
         ))}
       </StyledDiv>
-      <Footer></Footer>
+      <Footer>
+        <Button>
+          <Foot1 />
+        </Button>
+        <Button>
+          <Foot2 />
+        </Button>
+        <Button>
+          <Foot3 />
+        </Button>
+        <Button>
+          <Foot4 />
+        </Button>
+      </Footer>
     </>
   );
 };

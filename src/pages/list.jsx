@@ -161,10 +161,13 @@ export const token = await axios.post(
   }
 );
 
-const response = await axios.get("https://api.petfinder.com/v2/animals?=dog", {
-  headers: {
-    Authorization: `Bearer ${token.data.access_token}`,
-  },
-});
+const response = await axios.get(
+  "https://api.petfinder.com/v2/animals?type=dog",
+  {
+    headers: {
+      Authorization: `Bearer ${token.data.access_token}`,
+    },
+  }
+);
 
 console.log(response.data.animals);

@@ -119,5 +119,3 @@ const response = await axios.get("https://api.petfinder.com/v2/animals?=dog", {
     Authorization: `Bearer ${token.data.access_token}`,
   },
 });
-
-console.log(response.data.animals);

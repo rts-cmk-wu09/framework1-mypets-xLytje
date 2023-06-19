@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const DetailsView = () => {
   return (
@@ -18,3 +19,9 @@ const DetailsView = () => {
 };
 
 export default DetailsView;
+
+// const response = await axios.get("https://api.petfinder.com/v2/animals?=dog", {
+//   headers: {
+//     Authorization: `Bearer ${token.data.access_token}`,
+//   },
+// });

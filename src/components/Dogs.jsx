@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FiMapPin } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const StyledContainter = styled.section`
   width: 100%;
@@ -11,6 +12,10 @@ const StyledContainter = styled.section`
     10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
   border-radius: 16px;
   display: flex;
+  color: var(--title);
+`;
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
 const Image = styled.img`
   height: 100%;
@@ -52,25 +57,27 @@ const DescP = styled.p`
   margin: 0;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: break-all;
 `;
 export const Dogs = (props) => {
   return (
-    <StyledContainter>
-      <Image src={props.source} alt="" />
-      <DescSection>
-        <DescHead>{props.head}</DescHead>
-        <DescSpan>
-          <Pin /> New York City
-        </DescSpan>
-        <DescP>{props.p}</DescP>
-      </DescSection>
-      <Button>
-        <HeartO />
-      </Button>
-    </StyledContainter>
+    <StyledLink to="/details">
+      <StyledContainter>
+        <Image src={props.source} alt="" />
+        <DescSection>
+          <DescHead>{props.head}</DescHead>
+          <DescSpan>
+            <Pin /> New York City
+          </DescSpan>
+          <DescP>{props.p}</DescP>
+        </DescSection>
+        <Button>
+          <HeartO />
+        </Button>
+      </StyledContainter>
+    </StyledLink>
   );
 };

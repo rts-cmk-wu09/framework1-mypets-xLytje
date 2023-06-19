@@ -17,7 +17,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />} errorElement={<ErrorView />}>
       <Route index element={<IndexView />} />
       <Route path="/list" element={<ListView />} />
-      <Route path="/details" element={<DetailsView />} />
+      <Route path="/details/:id" element={<DetailsView />} />
     </Route>
   )
 );

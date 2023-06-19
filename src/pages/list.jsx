@@ -92,6 +92,7 @@ const ListView = () => {
             source={"./src/assets/dog.png"}
             head={data.breeds.primary}
             p={data.description}
+            id={data.id}
           />
         ))}
       </StyledDiv>
@@ -119,3 +120,5 @@ const response = await axios.get("https://api.petfinder.com/v2/animals?=dog", {
     Authorization: `Bearer ${token.data.access_token}`,
   },
 });
+
+console.log(response.data.animals);

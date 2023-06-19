@@ -64,7 +64,7 @@ const DescP = styled.p`
 `;
 export const Dogs = (props) => {
   return (
-    <StyledLink to="/details">
+    <StyledLink to={`/details/${props.id}`} key={props.id}>
       <StyledContainter>
         <Image src={props.source} alt="" />
         <DescSection>

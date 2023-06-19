@@ -45,6 +45,7 @@ const DescHead = styled.h3`
 const DescSpan = styled.span`
   font-size: 12px;
   margin: 8px 0 12px;
+  color: var(--bread);
 `;
 const DescP = styled.p`
   font-size: 14px;

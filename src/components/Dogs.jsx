@@ -20,9 +20,9 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   margin: 10px 10px 0 0;
-  font-size: 20px;
-  height: 33px;
-  width: 33px;
+  font-size: 16px;
+  height: 24px;
+  width: 24px;
   padding: 6px;
 `;
 const DescSection = styled.section`
@@ -39,7 +39,7 @@ const Pin = styled(FiMapPin)`
   color: var(--primary);
 `;
 const DescHead = styled.h3`
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
 `;
 const DescSpan = styled.span`

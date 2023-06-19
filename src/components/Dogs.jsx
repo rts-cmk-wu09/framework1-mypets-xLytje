@@ -11,6 +11,7 @@ const StyledContainter = styled.section`
     10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
   border-radius: 16px;
   display: flex;
+  justify-content: space-between;
   color: var(--title);
 `;
 const StyledLink = styled.a`

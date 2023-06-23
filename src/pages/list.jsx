@@ -116,7 +116,7 @@ const ListView = () => {
       </Header>
       <div className="carousel">
         {names.map((data) => (
-          <Tags name={data}></Tags>
+          <Tags name={data} key={data}></Tags>
         ))}
       </div>
       <StyledDiv>
@@ -126,6 +126,7 @@ const ListView = () => {
             head={data.breeds.primary}
             p={data.description}
             id={data.id}
+            key={data.id}
           />
         ))}
       </StyledDiv>

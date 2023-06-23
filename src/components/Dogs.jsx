@@ -13,12 +13,16 @@ const StyledContainter = styled.section`
   display: flex;
   justify-content: space-between;
   color: var(--title);
+  overflow: hidden;
 `;
 const StyledLink = styled.a`
   text-decoration: none;
 `;
 const Image = styled.img`
   height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-right: 5px;
 `;
 const Button = styled.button`
   display: flex;

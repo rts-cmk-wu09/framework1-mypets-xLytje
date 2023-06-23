@@ -116,16 +116,19 @@ const ListView = () => {
       </Header>
       <div className="carousel">
         {names.map((data) => (
-          <Tags name={data}></Tags>
+          <Tags name={data} key={data}></Tags>
         ))}
       </div>
       <StyledDiv>
         {response.data.animals.map((data) => (
           <Dogs
-            source={"./src/assets/dog.png"}
+            source={
+              data.photos[0] ? data.photos[0].medium : "./src/assets/dog.png"
+            }
             head={data.breeds.primary}
             p={data.description}
             id={data.id}
+            key={data.id}
           />
         ))}
       </StyledDiv>

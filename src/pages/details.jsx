@@ -12,15 +12,15 @@ const Image = styled.img`
   margin: -2rem;
   padding-bottom: 50px;
   z-index: 10;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 `;
 const StyledSection = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  margin: -24px -2rem 0;
+  margin: -35px -2rem 0;
   border-radius: 24px 24px 0 0;
   padding: 7%;
   background-color: var(--background);
-  width: 100vw;
   position: relative;
   text-align: left;
 `;
@@ -80,23 +80,37 @@ const WhiteLink = styled(Link)`
   text-decoration: none;
   width: 86%;
 `;
+const FlexDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 24px 0 16px;
+`;
 const DetailsView = () => {
   return (
     <>
-      <Image src="../src/assets/bg-dog.png" alt="" />
+      <Image
+        src={
+          dogDetail.data.animal.photos[0]
+            ? dogDetail.data.animal.photos[0].full
+            : "../src/assets/bg-dog.png"
+        }
+        alt=""
+      />
       <StyledSection>
         <Breed>{dogDetail.data.animal.breeds.primary}</Breed>
         <DescSpan>
           <Pin /> New York City
         </DescSpan>
-        <Button>
-          <Paw />
-        </Button>
-        <BreedP>{dogDetail.data.animal.breeds.primary}</BreedP>
-        <Button>
-          {dogDetail.data.animal.gender === "Female" ? <Female /> : <Male />}
-        </Button>
-        <GenderP>{dogDetail.data.animal.gender}</GenderP>
+        <FlexDiv>
+          <Button>
+            <Paw />
+          </Button>
+          <BreedP>{dogDetail.data.animal.breeds.primary}</BreedP>
+          <Button>
+            {dogDetail.data.animal.gender === "Female" ? <Female /> : <Male />}
+          </Button>
+          <GenderP>{dogDetail.data.animal.gender}</GenderP>
+        </FlexDiv>
         <Desc>{dogDetail.data.animal.description}</Desc>
         <WhiteLink to="/list">
           <Back>Back</Back>

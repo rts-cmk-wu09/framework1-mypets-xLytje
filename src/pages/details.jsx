@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { token } from "./list";
 import axios from "axios";
 import { useResolvedPath } from "react-router-dom";
+import { Footer } from "../components/Footer";
 import { styled } from "styled-components";
 import { FiMapPin } from "react-icons/fi";
 import { IoPawOutline, IoFemaleOutline, IoMaleOutline } from "react-icons/io5";
@@ -20,6 +21,7 @@ const StyledSection = styled.section`
   margin: -35px -2rem 0;
   border-radius: 24px 24px 0 0;
   padding: 7%;
+  padding-bottom: 130px;
   background-color: var(--background);
   position: relative;
   text-align: left;
@@ -116,6 +118,7 @@ const DetailsView = () => {
           <Back>Back</Back>
         </WhiteLink>
       </StyledSection>
+      <Footer />
     </>
   );
 };

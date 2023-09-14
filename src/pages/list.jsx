@@ -2,7 +2,7 @@ import axios from "axios";
 import { styled } from "styled-components";
 import { FiBell } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { BsHouseDoor, BsChat, BsHeart, BsPerson } from "react-icons/bs";
+import { Footer } from "../components/Footer";
 import { Tags } from "../components/Tags";
 import { Dogs } from "../components/Dogs";
 
@@ -11,21 +11,6 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-`;
-const Footer = styled.footer`
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: var(--background);
-  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
-    5px 5px 10px rgba(170, 170, 204, 0.25),
-    10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
-  height: 105px;
-  left: 0;
-  border-radius: 20px 20px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 `;
 const Button = styled.button`
   display: flex;
@@ -60,38 +45,6 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-`;
-const Foot1 = styled(BsHouseDoor)`
-  & {
-    color: var(--bread);
-  }
-  &:hover {
-    color: var(--primary);
-  }
-`;
-const Foot2 = styled(BsChat)`
-  & {
-    color: var(--bread);
-  }
-  &:hover {
-    color: var(--primary);
-  }
-`;
-const Foot3 = styled(BsHeart)`
-  & {
-    color: var(--bread);
-  }
-  &:hover {
-    color: var(--primary);
-  }
-`;
-const Foot4 = styled(BsPerson)`
-  & {
-    color: var(--bread);
-  }
-  &:hover {
-    color: var(--primary);
-  }
 `;
 
 const names = ["Cats", "Dogs", "Birds", "Horses", "Fish", "Rabbits", "Other"];
@@ -132,20 +85,7 @@ const ListView = () => {
           />
         ))}
       </StyledDiv>
-      <Footer>
-        <Button>
-          <Foot1 />
-        </Button>
-        <Button>
-          <Foot2 />
-        </Button>
-        <Button>
-          <Foot3 />
-        </Button>
-        <Button>
-          <Foot4 />
-        </Button>
-      </Footer>
+      <Footer />
     </>
   );
 };

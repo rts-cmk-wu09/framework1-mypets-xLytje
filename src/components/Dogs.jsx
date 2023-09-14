@@ -11,12 +11,12 @@ const StyledContainter = styled.section`
     10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
   border-radius: 16px;
   display: flex;
-  justify-content: space-between;
   color: var(--title);
   overflow: hidden;
 `;
 const StyledLink = styled.a`
   text-decoration: none;
+  color: unset;
 `;
 const Image = styled.img`
   height: 100%;
@@ -33,9 +33,11 @@ const Button = styled.button`
   height: 24px;
   width: 24px;
   padding: 6px;
+  margin-left: auto;
 `;
 const DescSection = styled.section`
   text-align: left;
+  padding: 15px 10px 10px 10px;
 `;
 const HeartO = styled(AiOutlineHeart)`
   color: red;
@@ -44,8 +46,14 @@ const Pin = styled(FiMapPin)`
   color: var(--primary);
 `;
 const DescHead = styled.h3`
-  font-size: 20px;
+  font-size: 1em;
   margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
 `;
 const DescSpan = styled.span`
   font-size: 12px;
@@ -57,16 +65,18 @@ const DescP = styled.p`
   margin: 0;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   word-break: break-all;
 `;
 export const Dogs = (props) => {
   return (
-    <StyledLink href={`/details/${props.id}`} key={props.id}>
-      <StyledContainter>
+    <StyledContainter>
+      <StyledLink href={`/details/${props.id}`} key={props.id}>
         <Image src={props.source} alt="" />
+      </StyledLink>
+      <StyledLink href={`/details/${props.id}`} key={props.id2}>
         <DescSection>
           <DescHead>{props.head}</DescHead>
           <DescSpan>
@@ -74,10 +84,10 @@ export const Dogs = (props) => {
           </DescSpan>
           <DescP>{props.p}</DescP>
         </DescSection>
-        <Button>
-          <HeartO />
-        </Button>
-      </StyledContainter>
-    </StyledLink>
+      </StyledLink>
+      <Button>
+        <HeartO />
+      </Button>
+    </StyledContainter>
   );
 };
